@@ -5,7 +5,7 @@ description: Initialise a freshly-cloned forrt-replication-template repository �
 
 # /init-template
 
-You're invoked the first time a user opens Claude in a repository that was created from `forrt-replication-template`. Your job is to convert the placeholder tokens (`{{REPO_NAME}}`, `{{AUTHOR_NAME}}`, etc.) into real values, then commit the change.
+You're invoked the first time a user opens Claude in a repository that was created from `forrt-replication-template`. Your job is to convert the placeholder tokens (`sdm-hotspot-effort-correction`, `Anne Fouilloux`, etc.) into real values, then commit the change.
 
 ## Step 1 — Detect
 
@@ -29,12 +29,12 @@ Run:
 git remote get-url origin 2>/dev/null
 ```
 
-If the result is a GitHub URL like `https://github.com/<org>/<name>.git` or `git@github.com:<org>/<name>.git`, parse `<org>` → `{{REPO_ORG}}` and `<name>` → `{{REPO_NAME}}`.
+If the result is a GitHub URL like `https://github.com/<org>/<name>.git` or `git@github.com:<org>/<name>.git`, parse `<org>` → `annefou` and `<name>` → `sdm-hotspot-effort-correction`.
 
 Also derive:
 
-- `{{YEAR}}` → current year (use `date +%Y`).
-- `{{RELEASE_DATE}}` → today (use `date +%Y-%m-%d`).
+- `2026` → current year (use `date +%Y`).
+- `2026-05-24` → today (use `date +%Y-%m-%d`).
 
 If `git remote` is missing, ask the user for the GitHub org/name they intend to use.
 
@@ -44,25 +44,25 @@ Ask for the following (one prompt; offer them as a structured list):
 
 | Token | What to ask |
 |---|---|
-| `{{AUTHOR_NAME}}` | Full name as you'd like it to appear in citations |
-| `{{AUTHOR_GIVEN}}` | Given name(s) — e.g. "Anne" |
-| `{{AUTHOR_FAMILY}}` | Family name — e.g. "Fouilloux" |
-| `{{AUTHOR_EMAIL}}` | Email for git commits (must be GitHub-verified for commits to credit the right user) |
-| `{{AUTHOR_ORCID}}` | ORCID URL — `https://orcid.org/0000-0000-0000-0000` |
-| `{{AUTHOR_AFFILIATION}}` | Your institution |
-| `{{GITHUB_USERNAME}}` | Your GitHub handle |
-| `{{PAPER_TITLE}}` | Title of the paper being replicated |
-| `{{PAPER_DOI}}` | DOI of the paper, bare form (`10.x/y`) |
-| `{{PAPER_AUTHOR_GIVEN}}` | First author's given name |
-| `{{PAPER_AUTHOR_FAMILY}}` | First author's family name |
-| `{{PAPER_YEAR}}` | Paper publication year |
-| `{{REPO_DESCRIPTION}}` | One-sentence description of this repo |
-| `{{PRIOR_CHAIN_URI}}` | *(Optional)* Apex CiTO URI of a prior FORRT chain this replication extends — e.g. `https://w3id.org/sciencelive/np/RA1q6c0fG2bMbiozF8Az2UpIfzAzqp8hoVEl6QIzfUpH8`. Leave blank if this is a fresh replication with no prior chain on the Science Live / nanopub network. |
-| `{{PRIOR_CHAIN_DESCRIPTION}}` | *(Optional, only if URI above is filled)* One-line description of the prior chain — e.g. `"Iberian Bombus FORRT constellation — Synthesis-level CiTO"`. |
+| `Anne Fouilloux` | Full name as you'd like it to appear in citations |
+| `Anne` | Given name(s) — e.g. "Anne" |
+| `Fouilloux` | Family name — e.g. "Fouilloux" |
+| `anne.fouilloux@lifewatch.eu` | Email for git commits (must be GitHub-verified for commits to credit the right user) |
+| `https://orcid.org/0000-0002-1784-2920` | ORCID URL — `https://orcid.org/0000-0000-0000-0000` |
+| `Lifewatch-ERIC, Spain` | Your institution |
+| `annefou` | Your GitHub handle |
+| `Coverage-based rarefaction and extrapolation: standardizing samples by completeness rather than size` | Title of the paper being replicated |
+| `10.1890/11-1952.1` | DOI of the paper, bare form (`10.x/y`) |
+| `Anne` | First author's given name |
+| `Chao` | First author's family name |
+| `2012` | Paper publication year |
+| `Tests whether coverage-based rarefaction (Chao & Jost 2012) corrects observer-effort bias in GBIF biodiversity hotspots, restoring agreement with EU Article 12 expert rangemaps in an Iberian-birds x HEALPix-NESTED system.` | One-sentence description of this repo |
+| `https://w3id.org/sciencelive/np/RALjFcvPtncy74ZL8QgSiEyRZv_-mOiZj4wvWuq8JK-2s` | *(Optional)* Apex CiTO URI of a prior FORRT chain this replication extends — e.g. `https://w3id.org/sciencelive/np/RA1q6c0fG2bMbiozF8Az2UpIfzAzqp8hoVEl6QIzfUpH8`. Leave blank if this is a fresh replication with no prior chain on the Science Live / nanopub network. |
+| `sdm-scale-replication apex CiTO Citation -- Hurlbert & Jetz (2007) Iberian-birds x HEALPix observer-effort chain; this study extends its Replication Outcome` | *(Optional, only if URI above is filled)* One-line description of the prior chain — e.g. `"Iberian Bombus FORRT constellation — Synthesis-level CiTO"`. |
 
 For tokens that don't apply yet (e.g. `{{ZENODO_DOI}}` — minted at first release), leave them as-is and tell the user they'll be filled in later.
 
-**Handling the optional prior-chain URI**: if the user provides `{{PRIOR_CHAIN_URI}}`, substitute both that and `{{PRIOR_CHAIN_DESCRIPTION}}` normally. If the user leaves it blank, **delete the entire `- type: generic` references entry block** from `CITATION.cff` (the block spanning the introductory comment lines through the `notes:` line). Otherwise the unsubstituted `{{...}}` tokens will fail the first-run guard in `CLAUDE.md`.
+**Handling the optional prior-chain URI**: if the user provides `https://w3id.org/sciencelive/np/RALjFcvPtncy74ZL8QgSiEyRZv_-mOiZj4wvWuq8JK-2s`, substitute both that and `sdm-scale-replication apex CiTO Citation -- Hurlbert & Jetz (2007) Iberian-birds x HEALPix observer-effort chain; this study extends its Replication Outcome` normally. If the user leaves it blank, **delete the entire `- type: generic` references entry block** from `CITATION.cff` (the block spanning the introductory comment lines through the `notes:` line). Otherwise the unsubstituted `{{...}}` tokens will fail the first-run guard in `CLAUDE.md`.
 
 ## Step 4 — Substitute
 
@@ -80,9 +80,9 @@ files=$(grep -rln '{{[A-Z_]\+}}' . \
 # For each placeholder, sed-replace
 for f in $files; do
   sed -i.bak \
-    -e "s|{{REPO_NAME}}|<actual repo name>|g" \
-    -e "s|{{REPO_ORG}}|<actual org>|g" \
-    -e "s|{{AUTHOR_NAME}}|<full name>|g" \
+    -e "s|sdm-hotspot-effort-correction|<actual repo name>|g" \
+    -e "s|annefou|<actual org>|g" \
+    -e "s|Anne Fouilloux|<full name>|g" \
     # ... etc for each token ...
     "$f" && rm "$f.bak"
 done
@@ -92,7 +92,7 @@ Use the Edit tool for each substitution rather than a shell loop if you prefer p
 
 ## Step 5 — Configure git identity
 
-If the user provided `{{AUTHOR_NAME}}` and `{{AUTHOR_EMAIL}}`, configure the local repo:
+If the user provided `Anne Fouilloux` and `anne.fouilloux@lifewatch.eu`, configure the local repo:
 
 ```bash
 git config user.name "<author name>"
@@ -123,9 +123,9 @@ Substituted placeholder tokens with author and paper details.
 
 ## Step 9 — Import the prior FORRT chain (if URI was provided)
 
-If the user provided a value for `{{PRIOR_CHAIN_URI}}` at Step 3 (i.e. this replication extends a prior chain on the Science Live / nanopub network), now chain into the `/import-from-nanopub` skill's work so the resulting repo is fully set up — claim layer summarised, infrastructure-layer sibling repos cloned, starter files staged — by the time `/init-template` finishes.
+If the user provided a value for `https://w3id.org/sciencelive/np/RALjFcvPtncy74ZL8QgSiEyRZv_-mOiZj4wvWuq8JK-2s` at Step 3 (i.e. this replication extends a prior chain on the Science Live / nanopub network), now chain into the `/import-from-nanopub` skill's work so the resulting repo is fully set up — claim layer summarised, infrastructure-layer sibling repos cloned, starter files staged — by the time `/init-template` finishes.
 
-If the user left `{{PRIOR_CHAIN_URI}}` blank, skip this step entirely (you should have already deleted the `type: generic` references entry from `CITATION.cff` in Step 3 / Step 4).
+If the user left `https://w3id.org/sciencelive/np/RALjFcvPtncy74ZL8QgSiEyRZv_-mOiZj4wvWuq8JK-2s` blank, skip this step entirely (you should have already deleted the `type: generic` references entry from `CITATION.cff` in Step 3 / Step 4).
 
 Otherwise:
 

@@ -2,13 +2,13 @@
 
 > This is a working scratchpad for the paper-analysis phase. The output of this file feeds the Quote / AIDA / Claim drafts. It is not itself a nanopub.
 
-**Reference paper:** {{PAPER_TITLE}}
+**Reference paper:** Coverage-based rarefaction and extrapolation: standardizing samples by completeness rather than size
 
-**DOI:** {{PAPER_DOI}}
+**DOI:** 10.1890/11-1952.1
 
 **Authors:** _add._
 
-**Year:** {{PAPER_YEAR}}
+**Year:** 2012
 
 ## Headline claim
 
