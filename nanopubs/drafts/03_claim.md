@@ -1,6 +1,10 @@
 # 03 — FORRT Claim
 
-> Run the pre-flight checklist in `docs/forrt-form-fields.md` § Pre-flight checklist before drafting.
+> Pre-flight (per `docs/forrt-form-fields.md` § FORRT Claim): fields in form
+> order are (1) Short URI suffix as claim ID [required], (2) Label of the claim
+> [required], (3) Search for an AIDA sentence [required], (4) Type of FORRT
+> claim [required], (5) Source URI [optional]. No fields below Source URI except
+> the "publish as example" toggle. Enumerated below in order.
 
 **Form heading:** *"FORRT Claim — Declare an original claim according to FORRT, linking it to an AIDA sentence with a specific FORRT type."*
 
@@ -8,45 +12,45 @@
 
 ### Short URI suffix as claim ID (text input, required)
 
-Slug becomes part of the nanopub URI. Use kebab-case.
-
 ```
-
+coverage-rarefaction-restores-hotspot-agreement
 ```
 
 ### Label of the claim (text input, required)
 
-A descriptive title (not a sentence). Used for searches/discovery.
+Descriptive title (not a sentence).
 
 ```
-
+Coverage-based rarefaction restores GBIF-vs-expert-rangemap hotspot agreement (Iberian birds, HEALPix-NESTED)
 ```
 
 ### Search for an AIDA sentence (search/select, required)
 
-URI of the AIDA published in step 02. Pull from `nanopubs/PUBLISHED.md`.
-
-> _If the AIDA was published via Nanodash (`w3id.org/np/...` namespace), the platform's search may not find it — paste the URI manually._
+URI of the AIDA published in step 02.
 
 ```
-
+<PENDING — paste the step-02 AIDA RA… URI from nanopubs/PUBLISHED.md>
 ```
 
 ### Type of FORRT claim (dropdown, required)
 
-Pick one. See `docs/claim-type-vocabulary.md` for the seven options and how to choose.
+See `docs/claim-type-vocabulary.md`. The claim asserts an empirical
+*relationship* — that applying coverage-based correction yields agreement
+between two hotspot surfaces. That is a `descriptive pattern` (an observed
+empirical relationship between variables), not a statement about a test
+statistic per se.
 
 - [ ] computational performance
 - [ ] scalability
 - [ ] data quality
 - [ ] data governance
-- [ ] descriptive pattern
+- [x] **descriptive pattern**
 - [ ] model performance
 - [ ] statistical significance
 
 ### Source URI (text input, optional)
 
-Full URL form: `https://doi.org/...` (NOT bare DOI).
+Full URL form. The methods paper whose technique the claim operationalises.
 
 ```
 https://doi.org/10.1890/11-1952.1
