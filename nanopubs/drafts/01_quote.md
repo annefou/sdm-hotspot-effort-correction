@@ -30,13 +30,34 @@ Format: starts with `10.` — bare DOI, **NOT** `https://doi.org/...` form.
 
 Verbatim from the paper PDF in `paper/`. Character-for-character. ≤ 500 chars in whole-text mode.
 
-> _Read the PDF first. Don't paraphrase from memory. See `docs/verify-before-drafting.md`._
+> _Verified verbatim against the PDF, p. 2533 (abstract). Read pages 2533–2535 directly; not reconstructed from memory._
+
+**PRIMARY** (abstract, p. 2533):
 
 ```
-
+We propose an integrated sampling, rarefaction, and extrapolation methodology to compare species richness of a set of communities based on samples of equal completeness (as measured by sample coverage) instead of equal size.
 ```
 
-Character count: ___ / 500.
+Character count: 224 / 500.
+
+#### Alternate quotes (also verbatim — pick one if the primary is rejected)
+
+**ALT-A** — crisp statement of the principle (Introduction, p. 2533):
+
+```
+The solution is to compare samples of equal completeness, not equal size.
+```
+
+Character count: 73 / 500.
+
+**ALT-B** — ties coverage-standardisation to *ranking* recovery, which is the
+hotspot use case (abstract, p. 2533):
+
+```
+coverage-based rarefaction throws away less data than traditional size-based rarefaction, and more efficiently finds the correct ranking of communities according to their true richnesses
+```
+
+Character count: 186 / 500. *(Verbatim contiguous span; opening lowercase because it is mid-sentence in the source.)*
 
 ### Comment (textarea, required)
 
@@ -45,7 +66,7 @@ Subtitle: *"Our interpretation or explanation of why this quotation is relevant.
 Why this quote matters and what the replication tests. Connect the paper's claim to the work this repo does. Don't repeat the quote.
 
 ```
-
+A sibling replication established that modern GBIF "biodiversity hotspots" for Iberian birds are inflated by survey effort: at the 0.25-degree (HEALPix Nside 256) reference scale, the top-richest cells track where citizen-science observers go rather than where birds are biologically densest, and even a gold-standard EU Article 12 expert rangemap does not close the gap. Because effort-rich cells (cities, accessible reserves) are sampled to far higher completeness than effort-poor cells, comparing raw per-cell richness is exactly the equal-size comparison this paper warns against. This study tests whether standardising every cell to a common sample coverage — Chao & Jost's coverage-based rarefaction — removes the effort signal and restores agreement between occurrence-derived hotspots and the expert-rangemap gold standard.
 ```
 
 ## Publication note
