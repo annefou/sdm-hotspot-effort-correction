@@ -66,8 +66,10 @@ Subtitle: *"Our interpretation or explanation of why this quotation is relevant.
 Why this quote matters and what the replication tests. Connect the paper's claim to the work this repo does. Don't repeat the quote.
 
 ```
-A sibling replication established that modern GBIF "biodiversity hotspots" for Iberian birds are inflated by survey effort: at the 0.25-degree (HEALPix Nside 256) reference scale, the top-richest cells track where citizen-science observers go rather than where birds are biologically densest, and even a gold-standard EU Article 12 expert rangemap does not close the gap. Because effort-rich cells (cities, accessible reserves) are sampled to far higher completeness than effort-poor cells, comparing raw per-cell richness is exactly the equal-size comparison this paper warns against. This study tests whether standardising every cell to a common sample coverage — Chao & Jost's coverage-based rarefaction — removes the effort signal and restores agreement between occurrence-derived hotspots and the expert-rangemap gold standard.
+A sibling replication showed modern GBIF "biodiversity hotspots" for Iberian birds are inflated by survey effort: richest-ranked cells track where observers go, not where birds are densest, and even an EU Article 12 expert rangemap doesn't close the gap. Effort-rich cells reach higher completeness than effort-poor ones, so comparing raw per-cell richness is exactly the equal-size comparison this paper warns against. This study tests whether coverage-based rarefaction removes that effort bias.
 ```
+
+Character count: 497 / 500.
 
 ## Publication note
 

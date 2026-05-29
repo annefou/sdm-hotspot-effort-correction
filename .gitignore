@@ -58,6 +58,10 @@ results/raw/
 # Docker
 docker-image.tar.gz
 
+# Editor swap files
+*.swp
+*.swo
+
 # Claude scratch
 .claude/.cache/
 .claude/local/

@@ -1,0 +1,40 @@
+{
+  "headline_nside": 256,
+  "hotspot_fraction": 0.05,
+  "hj_reference_range_pct": [
+    47.8,
+    68.6
+  ],
+  "hj_baseline_sibling_pct": {
+    "museum": 89.9,
+    "allbor": 97.8
+  },
+  "per_strategy": {
+    "museum": {
+      "comparator": "misidentified_pct_vs_art12",
+      "uncorrected_misidentified_pct": 94.19,
+      "best_corrected_misidentified_pct": 96.58,
+      "best_corrected_at": {
+        "kind": "fixed",
+        "target_coverage": 0.8
+      },
+      "reduction_pp_vs_uncorrected": -2.39,
+      "reaches_hj_range": false,
+      "at_or_below_hj_upper": false,
+      "synthetic": "False"
+    },
+    "allbor": {
+      "comparator": "misidentified_pct_vs_art12",
+      "uncorrected_misidentified_pct": 88.67,
+      "best_corrected_misidentified_pct": 87.41,
+      "best_corrected_at": {
+        "kind": "fixed",
+        "target_coverage": 0.8
+      },
+      "reduction_pp_vs_uncorrected": 1.26,
+      "reaches_hj_range": false,
+      "at_or_below_hj_upper": false,
+      "synthetic": "False"
+    }
+  }
+}

@@ -5,7 +5,7 @@
   "description": "Tests whether coverage-based rarefaction (Chao & Jost 2012) corrects observer-effort bias in GBIF biodiversity hotspots, restoring agreement with EU Article 12 expert rangemaps in an Iberian-birds x HEALPix-NESTED system.",
   "version": "0.1.0",
   "dateCreated": "2026-05-24",
-  "dateModified": "2026-05-24",
+  "dateModified": "2026-05-29",
   "license": "https://spdx.org/licenses/MIT",
   "codeRepository": "https://github.com/annefou/sdm-hotspot-effort-correction",
   "identifier": "{{ZENODO_DOI}}",
