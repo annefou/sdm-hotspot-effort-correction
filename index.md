@@ -36,7 +36,34 @@ docker run --rm ghcr.io/annefou/sdm-hotspot-effort-correction:latest
 
 ## Nanopublication chain
 
-The published chain is listed in [`nanopubs/PUBLISHED.md`](nanopubs/PUBLISHED.md). Each step links to its viewer URL on the Science Live platform.
+The replication's findings are published as a six-step FORRT nanopublication
+chain on the Science Live platform. The **apex citation** is the natural
+browsing entry point — it links the Outcome to the prior `sdm-scale-replication`
+chain via `cito:extends` (this work reinforces and extends the sibling's
+observer-effort finding) and to the methods paper via `cito:usesMethodIn`:
+
+- **CiTO apex (entry point)** — [`RACYbb_IxZNnBcxI7uPqc-df2oRaMr4bqHJTOJe-BNmkc`](https://platform.sciencelive4all.org/np/?uri=https://w3id.org/sciencelive/np/RACYbb_IxZNnBcxI7uPqc-df2oRaMr4bqHJTOJe-BNmkc)
+- **Replication Outcome** (Contradicted / HighConfidence — coverage correction does not restore agreement) — [`RAsPjEImfZaXsIri0ny4j_s_k_6wyOlC6tkocl6w2y7f4`](https://platform.sciencelive4all.org/np/?uri=https://w3id.org/sciencelive/np/RAsPjEImfZaXsIri0ny4j_s_k_6wyOlC6tkocl6w2y7f4)
+- **Replication Study** (design) — [`RAONIKJjrrndTWX_f7emVpeKFOrdDtKuaXD6lJk4z6fKI`](https://platform.sciencelive4all.org/np/?uri=https://w3id.org/sciencelive/np/RAONIKJjrrndTWX_f7emVpeKFOrdDtKuaXD6lJk4z6fKI)
+- **FORRT Claim** (descriptive pattern) — [`RAgF6PfpfyFAkyT514Yj0f97coEFOktoHvdZ6gCV84c4Q`](https://platform.sciencelive4all.org/np/?uri=https://w3id.org/sciencelive/np/RAgF6PfpfyFAkyT514Yj0f97coEFOktoHvdZ6gCV84c4Q)
+- **AIDA sentence** — [`RAuP2z6scqdWkG6A7RFK4kBSlbHjoDHEbXhoUS5BendEo`](https://platform.sciencelive4all.org/np/?uri=https://w3id.org/sciencelive/np/RAuP2z6scqdWkG6A7RFK4kBSlbHjoDHEbXhoUS5BendEo)
+- **Quote** (verbatim from Chao & Jost 2012) — [`RArxpQJ98cPc7V3uAWhjJQtriT7qjV40Ml-ciSREJSh3s`](https://platform.sciencelive4all.org/np/?uri=https://w3id.org/sciencelive/np/RArxpQJ98cPc7V3uAWhjJQtriT7qjV40Ml-ciSREJSh3s)
+
+The full URI registry (chain + Zenodo source DOI + GHCR Docker image) lives in
+[`nanopubs/PUBLISHED.md`](nanopubs/PUBLISHED.md). The chain's internal and
+external consistency was verified via the `/verify-chain` skill on 2026-05-30.
+
+## Headline result
+
+Coverage-based rarefaction (Chao & Jost 2012) **does not** restore agreement
+between modern GBIF occurrence-derived bird-richness hotspots and the EU Article
+12 expert-rangemap gold standard for Iberian birds. At the Hurlbert & Jetz
+reference scale (HEALPix Nside 256 ≈ 25 km, top-5 % hotspots, vs Article 12),
+the best coverage-corrected misidentification is **87.4 %** (all-observations)
+and **96.6 %** (museum), versus uncorrected baselines of 88.7 % and 94.2 % — a
+change of +1.3 and −2.4 percentage points respectively. Neither value reaches
+the Hurlbert & Jetz 47.8–68.6 % reference range. See the published Replication
+Outcome for full evidence and limitations.
 
 ## Citation
 

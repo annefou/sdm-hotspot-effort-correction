@@ -13,6 +13,14 @@ This file is the canonical registry of published nanopub URIs for this replicati
 | 05 | FORRT Replication Outcome | https://w3id.org/sciencelive/np/RAsPjEImfZaXsIri0ny4j_s_k_6wyOlC6tkocl6w2y7f4 | 
 | 06 | CiTO Citation | https://w3id.org/sciencelive/np/RACYbb_IxZNnBcxI7uPqc-df2oRaMr4bqHJTOJe-BNmkc | 
 
+## Software & data archive (Zenodo / GHCR)
+
+| Artefact | DOI / URL | Notes |
+|---|---|---|
+| Source — concept DOI | [10.5281/zenodo.20451519](https://doi.org/10.5281/zenodo.20451519) | Resolves to the latest version. |
+| Source — version DOI (v0.1.0) | [10.5281/zenodo.20451520](https://doi.org/10.5281/zenodo.20451520) | This release (2026-05-29). |
+| Docker image | `ghcr.io/annefou/sdm-hotspot-effort-correction:v0.1.0` (also `:latest`) | Pushed by `.github/workflows/docker.yml` on the `v0.1.0` tag (run 26662285331, 3m36s, success). Optional Zenodo archive of the image not configured — `ZENODO_TOKEN` repo secret not set; this is allowed per CLAUDE.md (image archive on Zenodo is "(optionally)"). To enable on a future release, add the secret. |
+
 ## Format
 
 URIs from Science Live are of the form `https://w3id.org/sciencelive/np/RA…`. URIs from Nanodash (used as a fallback when the Science Live UI hits a bug) are of the form `https://w3id.org/np/RA…`. Both are valid and citable.
